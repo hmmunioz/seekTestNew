@@ -26,5 +26,11 @@
   "languageSwitchedToEnglish": "Switched to English",
   "languageSwitchedToSpanish": "Switched to Spanish", 
   "retry":"Retry",
-  "unexpectedError": "An unexpected error occurred:"
+  "unexpectedError": "An unexpected error occurred:",
+  "filterAll": "All",
+  "filterPlanet": "Planet",
+  "filterSpaceStation": "Space Station",
+  "filterAlive": "Alive",
+  "filterDead": "Dead",
+  "filterUnknown": "Unknown"
 }

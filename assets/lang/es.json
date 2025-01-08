@@ -26,6 +26,12 @@
   "languageSwitchedToEnglish": "Cambiado a Inglés",
   "languageSwitchedToSpanish": "Cambiado a Español",
   "retry":"Reintentar",
-  "unexpectedError": "Ocurrió un error inesperado:"
+  "unexpectedError": "Ocurrió un error inesperado:",  
+  "filterAll": "Todos",
+  "filterPlanet": "Planeta",
+  "filterSpaceStation": "Estación Espacial",
+  "filterAlive": "Vivo",
+  "filterDead": "Muerto",
+  "filterUnknown": "Desconocido"
 
 }
