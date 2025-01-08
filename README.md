@@ -1,4 +1,3 @@
-
 # Flutter Project: Rick and Morty Explorer
 
 This project is a **Flutter** application designed to explore the universe of Rick and Morty. The app allows users to navigate characters, episodes, and locations with advanced features like search, an attractive design, and multilingual support.
@@ -9,37 +8,38 @@ This project is a **Flutter** application designed to explore the universe of Ri
 
 The project structure follows a modular and organized approach to facilitate scalability and maintenance.
 
-```plaintext
+````plaintext
 .
 ├── README.md
 ├── analysis_options.yaml
 ├── assets
-│   ├── fonts
-│   ├── gif
-│   ├── icons
-│   ├── images
-│   └── lang
+│   ├── fonts
+│   ├── gif
+│   ├── icons
+│   ├── images
+│   └── lang
 ├── lib
-│   ├── app
-│   ├── core
-│   │   ├── constants
-│   │   ├── error
-│   │   ├── localization
-│   │   ├── network
-│   │   └── usecases
-│   ├── features
-│   │   ├── characters
-│   │   ├── episodes
-│   │   ├── home
-│   │   ├── location
-│   │   └── welcome
-│   ├── main.dart
-│   └── shared
-│       ├── utils
-│       └── widgets
+│   ├── app
+│   ├── core
+│   │   ├── constants
+│   │   ├── error
+│   │   ├── localization
+│   │   ├── network
+│   │   └── usecases
+│   ├── features
+│   │   ├── characters
+│   │   ├── episodes
+│   │   ├── home
+│   │   ├── location
+│   │   └── welcome
+│   ├── main.dart
+│   └── shared
+│       ├── utils
+│       └── widgets
 ├── pubspec.lock
 ├── pubspec.yaml
-```
+├── app-release.apk
+
 
 ---
 
@@ -65,22 +65,61 @@ The project structure follows a modular and organized approach to facilitate sca
 ## 🛠️ Technologies Used
 
 ### **Frontend**
+
 - **Flutter 3.27.1**: Primary framework.
 - **Riverpod**: State management.
 - **GraphQL**: API connection to Rick and Morty.
 - **Atomic Design**: Organization and component reuse.
 
 ### **Tools**
-- **Mockito**: Unit testing.
+
 - **Dartz**: Error handling with `Either`.
 - **Logger**: Event and error logging.
 - **intl**: Multilingual support.
 
 ---
 
+## 💾 Running the Project
+
+### **Flutter Version**
+
+This project is built using **Flutter 3.27.1**. It's recommended to use [FVM (Flutter Version Management)](https://fvm.app/) to ensure compatibility with the correct Flutter version.
+
+#### **Steps to Set Up the Correct Flutter Version**
+
+1. **Install FVM**:
+   If you don't have FVM installed, run:
+   ```bash
+   dart pub global activate fvm
+````
+
+2. **Install Flutter 3.27.1 with FVM**:
+
+   ```bash
+   fvm install 3.27.1
+   ```
+
+3. **Run the Project with FVM**:
+
+   ```bash
+   fvm use 3.27.1
+   fvm flutter pub get
+   fvm flutter run
+   ```
+
+4. **For APK Testing**:
+   Alongside the project files, you'll find the release APK:
+   ```plaintext
+   app-release.apk
+   ```
+   You can install it directly on an Android device to test the app.
+
+---
+
 ## 🎨 Resources
 
 ### **Assets**
+
 - **Fonts**:
   - `RickAndMorty.ttf`
   - `Stone Serif Semibold.ttf`
@@ -92,87 +131,9 @@ The project structure follows a modular and organized approach to facilitate sca
 
 ---
 
-## 📂 Main Modules
-
-### **1. App**
-Main application configuration:
-- **Language**: `app_language_provider.dart`.
-- **Theme**: `app_theme_provider.dart`.
-- **Routes**: Navigation between pages.
-
-### **2. Core**
-Reusable and essential elements:
-- **Constants**: `app_colors`, `app_assets`, `app_strings`.
-- **Error Handling**: `error_handler`, `failures`.
-- **Network**: GraphQL configuration and client.
-- **Use Cases**: Base structure for logic.
-
-### **3. Features**
-Each primary functionality:
-- **Characters**:
-  - Presentation: List, search.
-  - Data: Datasource and repository.
-  - Domain: Use cases and entities.
-- **Episodes**:
-  - Similar to Characters but focused on episodes.
-- **Locations**:
-  - Similar to Characters but focused on locations.
-- **Welcome**:
-  - Welcome screen.
-
-### **4. Shared**
-Shared components and utilities:
-- **Utils**: Helper functions like `screen_utils`.
-- **Widgets**:
-  - `atoms`, `molecules`, `organisms`, `templates`.
-
----
-
-## 🧪 Testing
-
-The project includes unit tests for each module:
-
-- **Datasource**: Verifies data is fetched correctly from the API.
-- **Repository**: Ensures data conversion to the domain layer.
-- **Notifier**: Validates state handling and interactions.
-
-Run the tests with:
-```bash
-flutter test
-```
-
----
-
 ## 📋 Credits
 
 This project was developed by **Mauricio Muñoz**, a developer with over 6 years of experience in mobile technologies, an expert in **Flutter**, and passionate about delivering high-quality solutions.
-
----
-
-## 🔮 Future Steps
-
-1. **Improve the Interface**:
-   - Add smooth transitions and micro-interactions.
-2. **Offline Support**:
-   - Local persistence with SQLite or Hive.
-3. **New Features**:
-   - Favorites for characters, episodes, and locations.
-
----
-
-## 💻 Requirements
-
-### **Dependencies**
-Install dependencies with:
-```bash
-flutter pub get
-```
-
-### **Run**
-Start the app with:
-```bash
-flutter run
-```
 
 ---
 
