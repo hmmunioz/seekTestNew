@@ -17,9 +17,14 @@ class LocationRepositoryImpl implements LocationRepository {
   Future<Either<Failure, List<Location>>> getLocations({
     required int page,
     String? nameFilter,
+    String? type,
   }) async {
     try {
-      final locations = await datasource.fetchLocations(page, name: nameFilter);
+      final locations = await datasource.fetchLocations(
+        page: page,
+        name: nameFilter,
+        type: type,
+      );
 
       return Right(locations);
     } catch (e, stackTrace) {

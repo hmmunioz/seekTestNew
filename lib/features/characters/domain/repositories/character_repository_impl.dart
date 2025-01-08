@@ -17,9 +17,10 @@ class CharacterRepositoryImpl implements CharacterRepository {
   Future<Either<Failure, List<Character>>> getCharacters({
     required int page,
     String? nameFilter,
+    String? status,
   }) async {
     try {
-      final characters = await datasource.fetchCharacters(page: page, nameFilter: nameFilter);
+      final characters = await datasource.fetchCharacters(page: page, nameFilter: nameFilter, status: status);
 
       return Right(characters);
     } catch (e, stackTrace) {

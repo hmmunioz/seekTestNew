@@ -16,6 +16,7 @@ class LocationsNotifier extends StateNotifier<AsyncValue<List<Location>>> {
   bool _isLoadingMore = false;
 
   String? _currentNameFilter;
+  String? _currentNameType;
 
   bool get hasMore => _hasMore;
   bool get isLoadingMore => _isLoadingMore;
@@ -25,17 +26,20 @@ class LocationsNotifier extends StateNotifier<AsyncValue<List<Location>>> {
   Future<void> fetchLocations({
     int page = 1,
     String? name,
+    String? type,
   }) async {
     try {
-      if (page == 1) {
+      if (name != null && name.isNotEmpty || type != null) {
         _currentPage = 1;
         _hasMore = true;
         _currentNameFilter = name;
+        _currentNameType = type;
       }
 
       final result = await getLocations(GetLocationsParams(
         page: page,
         name: _currentNameFilter,
+        type: _currentNameType,
       ));
 
       result.fold(
@@ -63,6 +67,7 @@ class LocationsNotifier extends StateNotifier<AsyncValue<List<Location>>> {
       final result = await getLocations(GetLocationsParams(
         page: _currentPage + 1,
         name: _currentNameFilter,
+        type: _currentNameType,
       ));
 
       result.fold(

@@ -14,20 +14,32 @@ class CharactersNotifier extends StateNotifier<AsyncValue<List<Character>>> {
   int _currentPage = 1;
   bool _hasMore = true;
   bool _isLoadingMore = false;
-
+  String? _currentNameFilter;
+  String? _currentStatusFilter;
   bool get hasMore => _hasMore;
   bool get isLoadingMore => _isLoadingMore;
 
   CharactersNotifier(this.getCharacters) : super(const AsyncValue.loading());
 
-  Future<void> fetchCharacters({int page = 1, String? nameFilter}) async {
+  Future<void> fetchCharacters({
+    int page = 1,
+    String? nameFilter,
+    String? status,
+  }) async {
     try {
-      if (nameFilter != null && nameFilter.isNotEmpty) {
+      if (nameFilter != null && nameFilter.isNotEmpty || status != null) {
         _currentPage = 1;
         _hasMore = true;
+        _currentNameFilter = nameFilter;
+
+        _currentStatusFilter = status;
       }
 
-      final result = await getCharacters(GetCharactersParams(page: page, nameFilter: nameFilter));
+      final result = await getCharacters(GetCharactersParams(
+        page: page,
+        nameFilter: nameFilter,
+        status: _currentStatusFilter,
+      ));
       result.fold(
         (failure) => state = AsyncValue.error(failure.message, StackTrace.current),
         (characters) {
@@ -50,7 +62,8 @@ class CharactersNotifier extends StateNotifier<AsyncValue<List<Character>>> {
     _isLoadingMore = true;
 
     try {
-      final result = await getCharacters(GetCharactersParams(page: _currentPage + 1));
+      final result = await getCharacters(
+          GetCharactersParams(page: _currentPage + 1, nameFilter: _currentNameFilter, status: _currentStatusFilter));
       result.fold(
         (failure) => state = AsyncValue.error(failure.message, StackTrace.current),
         (newCharacters) {

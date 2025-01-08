@@ -6,5 +6,6 @@ abstract class LocationRepository {
   Future<Either<Failure, List<Location>>> getLocations({
     required int page,
     String? nameFilter,
+    String? type,
   });
 }

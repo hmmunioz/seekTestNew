@@ -11,7 +11,10 @@ class GetEpisodes {
 
   Future<Either<Failure, List<Episode>>> call(GetEpisodesParams params) async {
     try {
-      return await repository.getEpisodes(page: params.page, nameFilter: params.name);
+      return await repository.getEpisodes(
+        page: params.page,
+        nameFilter: params.name,
+      );
     } catch (e, stackTrace) {
       Logger.logError('UseCase error: $e', stackTrace: stackTrace);
       return Left(ServerFailure('Failed to execute use case'));

@@ -6,5 +6,6 @@ abstract class CharacterRepository {
   Future<Either<Failure, List<Character>>> getCharacters({
     required int page,
     String? nameFilter,
+    String? status,
   });
 }

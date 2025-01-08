@@ -25,4 +25,10 @@ class AppStrings {
   static String search(BuildContext context) => AppLocalization.of(context).translate('search');
   static String retry(BuildContext context) => AppLocalization.of(context).translate('retry');
   static String unexpectedError(BuildContext context) => AppLocalization.of(context).translate('unexpectedError');
+  static String filterAll(BuildContext context) => AppLocalization.of(context).translate('filterAll');
+  static String filterPlanet(BuildContext context) => AppLocalization.of(context).translate('filterPlanet');
+  static String filterSpaceStation(BuildContext context) => AppLocalization.of(context).translate('filterSpaceStation');
+  static String filterAlive(BuildContext context) => AppLocalization.of(context).translate('filterAlive');
+  static String filterDead(BuildContext context) => AppLocalization.of(context).translate('filterDead');
+  static String filterUnknown(BuildContext context) => AppLocalization.of(context).translate('filterUnknown');
 }

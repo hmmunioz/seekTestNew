@@ -10,14 +10,16 @@ class LocationDatasourceImpl implements LocationDatasource {
   LocationDatasourceImpl(this.client);
 
   @override
-  Future<List<LocationModel>> fetchLocations(
-    int page, {
+  Future<List<LocationModel>> fetchLocations({
+    int page = 1,
     String? name,
+    String? type,
   }) async {
     try {
       final result = await client.query(fetchLocationsQuery, variables: {
         'page': page,
         'name': name,
+        'type': type,
       });
 
       if (result.hasException) {

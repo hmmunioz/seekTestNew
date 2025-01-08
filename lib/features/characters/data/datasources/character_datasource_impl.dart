@@ -11,11 +11,12 @@ class CharacterDatasourceImpl implements CharacterDatasource {
   CharacterDatasourceImpl(this.client);
 
   @override
-  Future<List<CharacterModel>> fetchCharacters({int page = 1, String? nameFilter}) async {
+  Future<List<CharacterModel>> fetchCharacters({int page = 1, String? nameFilter, String? status}) async {
     try {
       final result = await client.query(fetchCharactersQuery, variables: {
         'page': page,
         'name': nameFilter,
+        'status': status,
       });
 
       if (result.hasException) {

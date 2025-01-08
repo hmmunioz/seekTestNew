@@ -11,7 +11,11 @@ class GetLocations {
 
   Future<Either<Failure, List<Location>>> call(GetLocationsParams params) async {
     try {
-      return await repository.getLocations(page: params.page, nameFilter: params.name);
+      return await repository.getLocations(
+        page: params.page,
+        nameFilter: params.name,
+        type: params.type,
+      );
     } catch (e, stackTrace) {
       Logger.logError('UseCase error: $e', stackTrace: stackTrace);
       return Left(ServerFailure('Failed to execute use case'));
@@ -22,9 +26,11 @@ class GetLocations {
 class GetLocationsParams {
   final int page;
   final String? name;
+  final String? type;
 
   const GetLocationsParams({
     required this.page,
     this.name,
+    this.type,
   });
 }

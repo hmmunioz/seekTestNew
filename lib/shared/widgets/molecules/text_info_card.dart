@@ -8,13 +8,13 @@ class TextInfoCard extends StatelessWidget {
   final IconData icon;
 
   const TextInfoCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitleLeft,
     required this.subtitleRight,
     required this.additionalInfo,
     this.icon = Icons.info,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

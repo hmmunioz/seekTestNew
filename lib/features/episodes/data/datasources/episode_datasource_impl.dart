@@ -11,7 +11,10 @@ class EpisodeDatasourceImpl implements EpisodeDatasource {
   EpisodeDatasourceImpl(this.client);
 
   @override
-  Future<List<EpisodeModel>> fetchEpisodes({int page = 1, String? name}) async {
+  Future<List<EpisodeModel>> fetchEpisodes({
+    int page = 1,
+    String? name,
+  }) async {
     try {
       final variables = {
         'page': page,

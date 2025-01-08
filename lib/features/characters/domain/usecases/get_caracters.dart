@@ -16,6 +16,7 @@ class GetCharacters extends UseCase<List<Character>, GetCharactersParams> {
       return await repository.getCharacters(
         page: params.page,
         nameFilter: params.nameFilter,
+        status: params.status,
       );
     } catch (e, stackTrace) {
       Logger.logError('UseCase error: $e', stackTrace: stackTrace);
@@ -27,9 +28,11 @@ class GetCharacters extends UseCase<List<Character>, GetCharactersParams> {
 class GetCharactersParams {
   final int page;
   final String? nameFilter;
+  final String? status;
 
   const GetCharactersParams({
     required this.page,
     this.nameFilter,
+    this.status,
   });
 }

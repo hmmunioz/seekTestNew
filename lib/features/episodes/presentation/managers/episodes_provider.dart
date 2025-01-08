@@ -22,7 +22,10 @@ class EpisodesNotifier extends StateNotifier<AsyncValue<List<Episode>>> {
 
   EpisodesNotifier(this.getEpisodes) : super(const AsyncValue.loading());
 
-  Future<void> fetchEpisodes({int page = 1, String? name}) async {
+  Future<void> fetchEpisodes({
+    int page = 1,
+    String? name,
+  }) async {
     try {
       if (page == 1) {
         _currentPage = 1;
