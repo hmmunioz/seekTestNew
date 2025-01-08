@@ -1,3 +1,4 @@
+
 # Flutter Project: Rick and Morty Explorer
 
 This project is a **Flutter** application designed to explore the universe of Rick and Morty. The app allows users to navigate characters, episodes, and locations with advanced features like search, an attractive design, and multilingual support.
@@ -39,26 +40,30 @@ The project structure follows a modular and organized approach to facilitate sca
 ├── pubspec.lock
 ├── pubspec.yaml
 ├── app-release.apk
-
+````
 
 ---
 
 ## 🚀 Key Features
 
-- **Character Exploration**:
-  - List of characters with images, status, and more information.
-  - Advanced search by name, gender, and status.
-- **Episode Exploration**:
-  - List of episodes with codes and air dates.
-  - Name-based search filter.
-- **Location Exploration**:
-  - List of locations with details like dimension and type.
-  - Advanced search by name.
-- **Interactive Design**:
-  - Support for **light mode** and **dark mode**.
-  - Reusable components under the **Atomic Design** approach.
-- **Multilingual Support**:
-  - Available languages: English and Spanish.
+### **Character Exploration**
+- List of characters with images, status, and more information.
+- Advanced search by name, gender, and status.
+
+### **Episode Exploration**
+- List of episodes with codes and air dates.
+- Name-based search filter.
+
+### **Location Exploration**
+- List of locations with details like dimension and type.
+- Advanced search by name.
+
+### **Interactive Design**
+- Support for **light mode** and **dark mode**.
+- Reusable components under the **Atomic Design** approach.
+
+### **Multilingual Support**
+- Available languages: English and Spanish.
 
 ---
 
@@ -91,16 +96,14 @@ This project is built using **Flutter 3.27.1**. It's recommended to use [FVM (Fl
    If you don't have FVM installed, run:
    ```bash
    dart pub global activate fvm
-````
+   ```
 
 2. **Install Flutter 3.27.1 with FVM**:
-
    ```bash
    fvm install 3.27.1
    ```
 
 3. **Run the Project with FVM**:
-
    ```bash
    fvm use 3.27.1
    fvm flutter pub get
