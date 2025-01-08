@@ -1,0 +1,1 @@
+ /Users/mauriciomu/Documents/fisa/SeekTest\ nuevo/.dart_tool/flutter_build/7fe91337746eba1096d15abbc6f9aeae/native_assets.yaml: 
